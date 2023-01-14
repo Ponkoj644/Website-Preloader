@@ -1,0 +1,80 @@
+/* Basic CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hero area CSS */
+.hero-area {
+  height: 100vh;
+  background-image: url(../images/hero-img.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-area h2 {
+  color: #fff;
+  font-size: 45px;
+}
+.hero-area a {
+  display: inline-block;
+  background-color: #fff;
+  color: #333;
+  padding: 12px 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 25px;
+}
+
+/* Video area CSS */
+.video-area {
+  padding: 75px 0;
+}
+
+/* Preloader */
+#prelodder-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#prelodder-area::after,
+#prelodder-area::before {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 100%;
+  background-color: #111;
+  z-index: -1;
+  transition: 0.5s ease-in-out;
+  /* opacity: .8; */
+}
+#prelodder-area::before {
+  left: 0;
+}
+#prelodder-area::after {
+  right: 0;
+}
+.page-loaded .spinner-border {
+  display: none;
+}
+#prelodder-area.page-loaded::before {
+  left: -50%;
+}
+#prelodder-area.page-loaded::after {
+  right: -50%;
+}
